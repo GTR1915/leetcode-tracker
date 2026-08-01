@@ -2,7 +2,7 @@ name: Daily LeetCode Tracker
 
 on:
   schedule:
-    - cron: "20 7 * * *"
+    - cron: "50 1 * * *"
   workflow_dispatch:
 
 permissions:
