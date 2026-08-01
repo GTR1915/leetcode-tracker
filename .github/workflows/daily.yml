@@ -1,0 +1,41 @@
+name: Daily LeetCode Tracker
+
+on:
+  schedule:
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install packages
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Tracker
+        run: |
+          python main.py
+
+      - name: Commit database
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          git add leetcode.db
+
+          git commit -m "Daily LeetCode update" || echo "No changes"
+
+          git push
