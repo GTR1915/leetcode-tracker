@@ -64,5 +64,16 @@
         "medium": 22,
         "hard": 3,
         "total": 46
+    },
+    {
+        "id": 104,
+        "date": "2026-11-06T15:24:12",
+        "username": "vAa8FNas4h",
+        "ranking": 2962876,
+        "reputation": 0,
+        "easy": 21,
+        "medium": 22,
+        "hard": 3,
+        "total": 46
     }
 ]
